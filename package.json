@@ -1,5 +1,5 @@
 {
-  "name": "material-ui-cra-ts",
+  "name": "module_federation_poc",
   "version": "5.0.0",
   "private": true,
   "dependencies": {
@@ -29,14 +29,6 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^7.1.0",
-    "@types/react": "18.3.2",
-    "@types/react-dom": "18.3.0",
-    "typescript": "5.4.5"
-  },
-  "overrides": {
-    "react-scripts": {
-      "typescript": "^5"
-    }
+    "@craco/craco": "^7.1.0"
   }
 }

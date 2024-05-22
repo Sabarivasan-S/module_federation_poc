@@ -12,26 +12,25 @@ module.exports = () => ({
         publicPath: "auto",
       },
     },
-    plugins: {
-      add: [
-        new ModuleFederationPlugin({
-          name: "onboarding",
-          filename: "remoteEntry.js",
-          exposes: {
-          },
-          shared: {
-            ...deps,
-            react: {
-              singleton: true,
-              requiredVersion: deps.react,
+      plugins: {
+        add: [
+          new ModuleFederationPlugin({
+            name: "onboarding",
+            filename: "remoteEntry.js",
+            exposes: {},
+            shared: {
+              ...deps,
+              react: {
+                singleton: true,
+                requiredVersion: deps.react,
+              },
+              "react-dom": {
+                singleton: true,
+                requiredVersion: deps["react-dom"],
+              },
             },
-            "react-dom": {
-              singleton: true,
-              requiredVersion: deps["react-dom"],
-            },
-          },
-        }),
-      ],
+          }),
+        ],
     },
   },
 });
