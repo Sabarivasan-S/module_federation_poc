@@ -4,7 +4,7 @@ const deps = require("./package.json").dependencies;
 
 module.exports = () => ({
   devServer: {
-    port: 3000,
+    port: 7000,
   },
   webpack: {
     configure: {
@@ -17,7 +17,13 @@ module.exports = () => ({
           new ModuleFederationPlugin({
             name: "onboarding",
             filename: "remoteEntry.js",
-            exposes: {},
+            exposes: {
+              './CountContext': './src/CountContext',
+              './CountReducer': './src/CountReducer',
+              './testContextComponent': './src/testContextComponent',
+              './testReducerComponent': './src/testReducerComponent',
+              './testApp':'./src/App'
+            },
             shared: {
               ...deps,
               react: {
