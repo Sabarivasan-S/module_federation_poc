@@ -1,5 +1,5 @@
 const { ModuleFederationPlugin } = require("webpack").container;
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const deps = require("./package.json").dependencies;
 
 module.exports = () => ({
@@ -9,7 +9,7 @@ module.exports = () => ({
   webpack: {
     configure: {
       output: {
-        publicPath: "auto",
+        publicPath: "http://localhost:7000/",
       },
     },
       plugins: {
@@ -21,7 +21,20 @@ module.exports = () => ({
               "./Test": "./src/components/test.jsx",
               "./OnboardingPage": "./src/components/OnboardingPage.jsx",
             },
-            shared: ['react', 'react-dom'],
+            shared: {
+              ...deps,
+              react: {
+                singleton: true,
+                requiredVersion: deps.react,
+              },
+              "react-dom": {
+                singleton: true,
+                requiredVersion: deps["react-dom"],
+              },
+            },
+          }),
+          new HtmlWebpackPlugin({
+            template: './public/index.html',
           }),
         ],
     },

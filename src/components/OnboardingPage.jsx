@@ -1,6 +1,6 @@
-import { Button } from '@mui/material'
 import React from 'react'
 import Test from './test'
+import Button from "@material-ui/core/Button";
 
 export default function OnboardingPage() {
   return (
