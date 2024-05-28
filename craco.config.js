@@ -17,13 +17,11 @@ module.exports = () => ({
           new ModuleFederationPlugin({
             name: "onboarding",
             filename: "remoteEntry.js",
-            // remotes: {
-
-            // }
             exposes: {
               "./Test": "./src/components/test.jsx",
+              "./OnboardingPage": "./src/components/OnboardingPage.jsx",
             },
-            shared: ['react', 'react-dom']
+            shared: ['react', 'react-dom'],
           }),
         ],
     },
