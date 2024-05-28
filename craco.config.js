@@ -1,5 +1,4 @@
 const { ModuleFederationPlugin } = require("webpack").container;
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const deps = require("./package.json").dependencies;
 
 module.exports = () => ({
@@ -9,7 +8,7 @@ module.exports = () => ({
   webpack: {
     configure: {
       output: {
-        publicPath: "http://localhost:7000/",
+        publicPath: "auto",
       },
     },
       plugins: {
@@ -20,6 +19,7 @@ module.exports = () => ({
             exposes: {
               "./Test": "./src/components/test.jsx",
               "./OnboardingPage": "./src/components/OnboardingPage.jsx",
+              "./SignIn": "./src/components/SignIn.jsx",
             },
             shared: {
               ...deps,
@@ -33,10 +33,7 @@ module.exports = () => ({
               },
             },
           }),
-          new HtmlWebpackPlugin({
-            template: './public/index.html',
-          }),
-        ],
+        ]
     },
   },
 });
