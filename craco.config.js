@@ -35,6 +35,10 @@ module.exports = () => ({
                 singleton: true,
                 requiredVersion: deps["react-dom"],
               },
+              "@material/core": {
+                singleton: true,
+                // requiredVersion: deps["@material/core"],
+              }
             },
           }),
         ]
