@@ -16,10 +16,14 @@ module.exports = () => ({
           new ModuleFederationPlugin({
             name: "onboarding",
             filename: "remoteEntry.js",
+            remotes: {
+              Scheduler: "Scheduler@http://localhost:3000/remoteEntry.js",
+            },
             exposes: {
               "./Test": "./src/components/test.jsx",
               "./OnboardingPage": "./src/components/OnboardingPage.jsx",
-              "./SignIn": "./src/components/SignIn.jsx",
+              "./GetProperties": "./src/components/GetProperties.jsx",
+              "./App": "./src/components/Routers.jsx"
             },
             shared: {
               ...deps,

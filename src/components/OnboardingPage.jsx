@@ -43,7 +43,6 @@ export default function SignUp(props) {
   };
 
   return (
-    <ThemeProvider theme={props.theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -135,6 +134,5 @@ export default function SignUp(props) {
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
-    </ThemeProvider>
   );
 }
