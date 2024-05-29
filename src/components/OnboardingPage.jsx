@@ -32,7 +32,7 @@ function Copyright(props) {
   );
 }
 
-export default function SignUp(props) {
+export default function OnboardingPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -127,7 +127,7 @@ export default function SignUp(props) {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <MoveToSignIn baseUrl={props.baseUrl} />
+                <MoveToSignIn />
               </Grid>
             </Grid>
           </Box>
