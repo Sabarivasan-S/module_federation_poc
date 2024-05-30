@@ -22,7 +22,8 @@ module.exports = () => ({
               './CountReducer': './src/CountReducer',
               './testContextComponent': './src/testContextComponent',
               './testReducerComponent': './src/testReducerComponent',
-              './testApp':'./src/App'
+              './testApp':'./src/App',
+              './testReduxComponent': './src/testReduxComponent'
             },
             shared: {
               ...deps,

@@ -1,20 +1,16 @@
 import React from 'react';
-import TestReducerComponent from './testReducerComponent';
-import CountContextProvider from './CountContext';
-import CountReducerProvider from './CountReducer';
-import TestContextComponent from './testContextComponent';
+import TestReduxComponent from './testReduxComponent';
+import store from './store';
 
-const App=()=> {
+const App = ({store:externalStore}) => {
+  let storeToUse;
+  if(externalStore) storeToUse=externalStore;
+  else storeToUse=store;
   return (
     <>
-      <CountContextProvider>
-        <TestContextComponent/>
-      </CountContextProvider>
-      <CountReducerProvider>
-        <TestReducerComponent/>
-      </CountReducerProvider>
+      <TestReduxComponent store={storeToUse}/>
     </>
-  )
-}
+  );
+};
 
 export default App;

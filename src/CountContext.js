@@ -3,7 +3,7 @@ const CountContext = createContext();
 export const useCount = () => useContext(CountContext);
 
 const CountContextProvider = ({children}) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(2);
   return (
     <CountContext.Provider value={{count, setCount}}>
       {children}
